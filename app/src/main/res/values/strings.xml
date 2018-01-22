@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WordyCounty</string>
+    <string name="entertext">Give me your words!</string>
+    <string name="button">I shall count those words!</string>
+</resources>
