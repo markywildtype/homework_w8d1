@@ -8,11 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class WordCountActivity extends AppCompatActivity {
 
     EditText words;
     Button button;
     TextView wordCount;
+    TextView individualWords    ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,7 @@ public class WordCountActivity extends AppCompatActivity {
         words = findViewById(R.id.entertext);
         button = findViewById(R.id.button);
         wordCount = findViewById(R.id.wordcount);
+        individualWords = findViewById(R.id.individualwords);
     }
 
     public void onCountButtonClicked(View button){
@@ -29,6 +33,8 @@ public class WordCountActivity extends AppCompatActivity {
         WordCount sentenceToCount = new WordCount(sentence);
         String answer = "That is " + sentenceToCount.countWords() + " words";
         wordCount.setText(answer);
+        HashMap<String, Integer> countByWord = sentenceToCount.countIndividualWordInstances();
+        individualWords.setText(countByWord.toString());
     }
 
 
